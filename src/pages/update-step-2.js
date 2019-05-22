@@ -53,8 +53,7 @@ const Layout = styled.div`
 `
 
 const UpdateStep2 = props => {
-  const { isGradient = true, hue = 0, hue2 = 0 } = JSON.parse(localStorage.getItem('state'))
-  // const { isGradient = true, hue = 0, hue2 = 0 } = props.location.state
+  const { isGradient = true, hue = 0, hue2 = 0 } = props.location.state
   const [imgUrl, setImgUrl] = useState(NO_AVATAR_IMG_URL)
   const [userID, setUserID] = useState(null)
   const [description, setDescription] = useState('')
@@ -77,9 +76,9 @@ const UpdateStep2 = props => {
     }
   }
 
-  useEffect(() => {
-    getCurrentUserImg()
-  }, [])
+  // useEffect(() => {
+  //   getCurrentUserImg()
+  // }, [])
 
   const onShare = async () => {
     try {
@@ -146,6 +145,7 @@ const UpdateStep2 = props => {
         />
       </CaptionWrapper>
       <ColorCircle isGradient={isGradient} hue={hue} hue2={hue2} />
+      {/* <ColorRenderer hue1={hue} hue2={hue2}/> */}
       <div style={{ marginTop: '50px' }}>
         {description}
       </div>

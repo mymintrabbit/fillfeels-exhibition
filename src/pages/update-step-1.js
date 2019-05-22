@@ -70,26 +70,22 @@ class UpdateStep1 extends Component {
   }
 
   componentDidMount() {
-    if (this.props.location.state) {
-      this.setState({
-        ...this.props.location.state,
-      })
-    }
+    // if (this.props.location.state) {
+    //   this.setState({
+    //     ...this.props.location.state,
+    //   })
+    // }
   }
 
   onChange = hue => {
-    console.log(hue)
     this.setState({ hue })
   }
 
   onChange2 = hue => {
-    console.log(hue)
     this.setState({ hue2: hue })
   }
 
   onNext = () => {
-    console.log(this.state)
-    localStorage.setItem('state', JSON.stringify(this.state))
     this.props.history.push(pathRoutes.UpdateStepTwo.path, {
       ...this.state,
     })
